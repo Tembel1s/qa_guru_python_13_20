@@ -9,14 +9,15 @@ def test_onboarding():
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_forward_button')).click()
 
     with step('Second screen'):
-        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).should(have.text('New ways to explore'))
+        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).should(
+            have.text('New ways to explore'))
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_forward_button')).click()
 
     with step('Third screen'):
-        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).should(have.text('Reading lists with sync'))
+        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).should(
+            have.text('Reading lists with sync'))
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_forward_button')).click()
 
     with step('Fourth screen'):
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/primaryTextView')).should(have.text('Data & Privacy'))
         browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/fragment_onboarding_done_button')).click()
-

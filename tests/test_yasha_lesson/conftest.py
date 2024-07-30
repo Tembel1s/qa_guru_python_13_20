@@ -7,7 +7,6 @@ import config
 from utils import attach
 
 
-
 @pytest.fixture(scope='function', autouse=True)
 def mobile_management():
     options = config.to_driver_options()
@@ -17,7 +16,6 @@ def mobile_management():
                                                  options=options)
         browser.config.timeout = float(os.getenv("TIMEOUT"))
 
-
     yield
 
     attach.add_screenshot(browser)
@@ -26,7 +24,5 @@ def mobile_management():
     if config.runs_on_bstack:
         attach.add_video(browser)
 
-
     with allure.step('Close app session'):
         browser.quit()
-

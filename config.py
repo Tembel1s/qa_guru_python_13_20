@@ -13,6 +13,7 @@ runs_on_bstack = app.startswith('bs://')
 if runs_on_bstack:
     remote_url = 'http://hub.browserstack.com/wd/hub'
 
+
 def to_driver_options():
     options = UiAutomator2Options()
 
