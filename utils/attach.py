@@ -3,11 +3,9 @@ import requests
 import os
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path='.env.bstack')
+load_dotenv()
 user_name = os.getenv("USER_NAME")
 access_key = os.getenv("ACCESS_KEY")
-
-
 def add_screenshot(browser):
     png = browser.driver.get_screenshot_as_png()
     allure.attach(body=png,

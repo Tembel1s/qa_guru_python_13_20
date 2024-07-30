@@ -2,10 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+../qa_guru_python_13_20/.env.bstack
 allure-results
-.env.bstack
-.env.emulator
-.env.real_device
+.env
 
 # C extensions
 *.so
@@ -126,11 +125,11 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-../qa_guru_python_13_19/.env
+../qa_guru_python_13_20/.env.bstack
 .venv
-env/
+../qa_guru_python_13_20/.env.bstack/
 venv/
-ENV/
+../qa_guru_python_13_20/.env.bstack/
 env.bak/
 venv.bak/
 
