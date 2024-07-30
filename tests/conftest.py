@@ -2,7 +2,6 @@ import pytest
 from appium import webdriver
 from dotenv import load_dotenv
 from selene import browser
-
 import config
 from utils import attach
 

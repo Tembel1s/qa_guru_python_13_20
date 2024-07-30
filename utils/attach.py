@@ -1,31 +1,27 @@
 import allure
 import requests
 import os
-from dotenv import load_dotenv
-
-load_dotenv(dotenv_path='.env.bstack')
-user_name = os.getenv("USER_NAME")
-access_key = os.getenv("ACCESS_KEY")
+from selene import browser
 
 
-def add_screenshot(browser):
+def add_screenshot():
     png = browser.driver.get_screenshot_as_png()
     allure.attach(body=png,
                   name='Screenshot',
                   attachment_type=allure.attachment_type.PNG)
 
 
-def add_xml(browser):
+def add_xml():
     xml_dump = browser.driver.page_source
     allure.attach(body=xml_dump,
                   name='XML screen',
                   attachment_type=allure.attachment_type.XML)
 
 
-def add_video(browser):
+def add_video(session_id):
     browserstack_session = requests.get(
-        url=f'https://api.browserstack.com/app-automate/sessions/{browser.driver.session_id}.json',
-        auth=(user_name, access_key)
+        url=f'https://api.browserstack.com/app-automate/sessions/{session_id}.json',
+        auth=(os.getenv('USER_NAME'), os.getenv('ACCESS_KEY'))
     ).json()
     video_url = browserstack_session['automation_session']['video_url']
 
